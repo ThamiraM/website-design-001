@@ -1,0 +1,299 @@
+*, *::before, *::after {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Italiana', serif;
+    font-family: 'Lato', sans-serif;
+    padding: 0;
+    margin: 0;
+}
+
+
+/** Navigation styles */
+
+.logo {
+    font-size: 2rem;
+    font-weight: 400;
+    letter-spacing: 0.5em;
+}
+
+header {
+    background-color: #b91c1c;
+    color: #ffff;
+    position: fixed;
+    top: 0;
+    padding: 0.5em 0;
+    text-align: center;
+    z-index: 999;
+    width: 100%;
+}
+
+nav {
+    position: absolute;
+    text-align: left;
+    top: 100%;
+    left: 0;
+    background-color: #b91c1c;
+    width: 100%;
+    padding: 1em;
+    display: none;
+    transition: display 2s;
+    transition-timing-function: ease-in-out;  
+}
+
+nav ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+nav li {
+    margin-bottom: 1em;
+}
+
+nav a  {
+    color: white;
+    text-decoration: none;
+    font-size: 1.2em;
+    text-transform: uppercase;
+}
+
+nav li a:hover {
+    color: #111;
+    font-weight: 900;
+}
+.nav-toggle {
+    display: none;
+}
+
+.nav-toggle-label {
+    position: absolute;
+    top:0;
+    left: 1em;
+    height: 100%;
+    display: flex;
+    align-items: center;
+}
+
+.nav-toggle-label span,
+.nav-toggle-label span::before,
+.nav-toggle-label span::after {
+    display: block;
+    background: white;
+    height: 0.2em;
+    width: 3em;
+    border-radius: 2px;
+    position: relative;
+}
+
+.nav-toggle-label span::before,
+.nav-toggle-label span::after {
+    content: '';
+    position: absolute;
+}
+
+.nav-toggle-label span::before {
+    bottom:  1em;
+}
+
+.nav-toggle-label span::after {
+    top:  1em;
+}
+
+
+
+.nav-toggle:checked ~ nav {
+    display: block;
+    animation: fadeIn 0.5s;
+}
+
+.nav-toggle:checked ~ .nav-toggle-label span,
+.nav-toggle:checked ~ .nav-toggle-label span::after,
+.nav-toggle:checked ~ .nav-toggle-label span::before{
+    background-color: #111;
+    height: 0.4em;
+}
+
+@keyframes fadeIn {
+    from {
+         opacity: 0;
+    }
+
+    to {
+         opacity: 1;
+    }
+}
+
+@media screen and (min-width: 800px) {
+    .nav-toggle-label {
+        display: none;
+    }
+
+    .logo {
+       letter-spacing: 0.25em;
+       display: flex;
+    }
+
+    header {
+        display: flex;
+        padding-left: 2em;
+        position: fixed;
+        align-items: center;
+        justify-content: space-between;
+    }
+
+    nav {
+        display: block;
+        margin-top: 0;
+        position: relative;
+        margin-left: 2em;
+        justify-items: end;
+    }
+     
+    nav ul {
+        display: flex;
+        position: relative;
+        align-items: center;
+        justify-content: right;
+    }
+
+    nav li {
+        position: relative;
+        margin-right: 2em;
+    }
+}
+
+
+/** Navigation styles end */
+
+.navTop {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.search {
+    display: flex;
+    align-items: center;
+    background-color: gray;
+    padding: .75em 2em;
+    border-radius: 10px;
+}
+
+.searchInput {
+    border: 0;
+    background-color: transparent;
+    outline: none;
+    color: lightgray;
+    font-size: 1rem;
+}
+
+.searchInput::placeholder {
+    color: lightgray;
+    font-size: 1rem;
+}
+
+.limitedOffer {
+    font-size: 1.25rem;
+    border-bottom: 2px solid green;
+    cursor: pointer;
+}
+
+.navBottom {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 1em 0;
+}
+
+.menuItem {
+    margin-right: 2em;
+    cursor: pointer;
+    font-weight: 400;
+
+}
+
+
+/** Slider styles **/
+.slider {
+    background: url("https://images.unsplash.com/photo-1604147495798-57beb5d6af73?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80");
+    object-fit: cover;
+    overflow: hidden;
+    height: 100vh;
+
+    /* clip-path: polygon(0 0, 100% 0, 100% 49%, 0% 100%); */
+}
+
+.sliderWrapper {
+    display: flex;
+    width: 500vw;
+    transition: all 1s ease-in-out ;
+    padding-top: 20vh;
+}
+
+.sliderItem {
+    width: 100vw;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+
+
+
+.sliderImg {
+    z-index: 1;
+}
+
+.sliderTitle {
+    position: absolute;
+    font-size: 4rem;
+    font-weight: 900;
+    right: 2em;
+    top: 1em;
+    color: white;
+    text-align: center;
+    z-index: 1;
+}
+
+.sliderPrice {
+    position: absolute;
+    font-size: 4rem;
+    font-weight: 900;
+    left: 1.5em;
+    top: 1em;
+    color: white;
+    text-align: center;
+    z-index: 1;
+}
+
+.sliderButton {
+    position: absolute;
+    top: 10em;
+    right: 5em;
+    background: white;
+    font-size: 2rem;
+    font-weight: 700;
+    padding: 0.5em 1.5em;
+    margin-top: 4em;
+    z-index: 1;
+}
+
+.sliderButton:hover {
+    background: black;
+    color: white;
+    z-index: 1;
+}
+
+.sliderBg {
+    width: 45em;
+    height: 45em;
+    position: absolute;
+    clip-path: polygon(20% 0%, 99% 35%, 98% 81%, 0 88%);
+}
+
+.sliderItem:nth-child(1) .sliderBg {
+    background-color: teal;
+}
+
+
