@@ -35,29 +35,30 @@ body {
     position: relative;
 }
 
-
-
 .sliderImg {
     z-index: 1;
+    width: 70vw;
 }
 
 .sliderTitle {
     position: absolute;
-    font-size: 4rem;
+    font-size: 4em;
     font-weight: 900;
     right: 2em;
     top: 1em;
     color: white;
     text-align: center;
     z-index: 1;
+    display: none;
 }
 
 .sliderPrice {
     position: absolute;
     font-size: 4rem;
     font-weight: 900;
-    left: 1.5em;
-    top: 1em;
+    top: 4.7em;
+        bottom: 2em;
+        left: 3em;
     color: white;
     text-align: center;
     z-index: 1;
@@ -86,10 +87,25 @@ body {
     height: 45em;
     position: absolute;
     clip-path: polygon(20% 0%, 99% 35%, 98% 81%, 0 88%);
+    display: none;
+        /* mobile */
 }
 
 .sliderItem:nth-child(1) .sliderBg {
     background-color: teal;
 }
 
+@media screen and (min-width: 800px) {
+    .sliderImg {
+        width: 40vw;
+    }
+
+    .sliderBg {
+        display: block;
+    }
+
+    .sliderTitle {
+        display: block;
+    }
+}
 
