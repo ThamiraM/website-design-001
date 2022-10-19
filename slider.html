@@ -1,0 +1,74 @@
+<div class="slider">
+    <div class="sliderWrapper">
+        <div class="sliderItem">
+            <img src="./img/air.png" class="sliderImg" />
+            <div class="sliderBg"></div>
+            <h1 class="sliderTitle">
+                AIRFORCE <br />
+                NEW <br />
+                SEASON
+            </h1>
+            <h2 class="sliderPrice">$199</h2>
+            <button class="sliderButton">Buy Now</button>
+        </div>
+        <div class="sliderItem">
+            <img src="./img/jordan.png" class="sliderImg" />
+            <div class="sliderBg"></div>
+            <h1 class="sliderTitle">
+                JORDAN <br />
+                NEW <br />
+                SEASON
+            </h1>
+            <h2 class="sliderPrice">$199</h2>
+            <button class="sliderButton">Buy Now</button>
+        </div>
+        <div class="sliderItem">
+            <img src="./img/blazer.png" class="sliderImg" />
+            <div class="sliderBg"></div>
+            <h1 class="sliderTitle">
+                BLAZER <br />
+                NEW <br />
+                SEASON
+            </h1>
+            <h2 class="sliderPrice">$199</h2>
+            <button class="sliderButton">Buy Now</button>
+        </div>
+        <div class="sliderItem">
+            <img src="./img/hippie.png" class="sliderImg" />
+            <div class="sliderBg"></div>
+            <h1 class="sliderTitle">
+                HIPPIE <br />
+                NEW <br />
+                SEASON
+            </h1>
+            <h2 class="sliderPrice">$199</h2>
+            <button class="sliderButton">Buy Now</button>
+        </div>
+        <div class="sliderItem">
+            <img src="./img/crater.png" class="sliderImg" />
+            <div class="sliderBg"></div>
+            <h1 class="sliderTitle">
+                CARTER <br />
+                NEW <br />
+                SEASON
+            </h1>
+            <h2 class="sliderPrice">$199</h2>
+            <button class="sliderButton">Buy Now</button>
+        </div>
+    </div>
+
+</div>
+<script>
+    const wrapper = document.querySelector(".sliderWrapper")
+    let itemCount = 0
+    setInterval(() => {
+        wrapper.style.transform = `translatex(${-100 * itemCount}vw)`
+
+        if (itemCount >= 4) {
+            itemCount = 0
+        } else {
+            itemCount++
+        }
+
+    }, 5000)
+</script>
