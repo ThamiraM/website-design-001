@@ -1,0 +1,147 @@
+.logo {
+    font-size: 2rem;
+    font-weight: 400;
+    letter-spacing: 0.5em;
+    margin-left: 3em;
+}
+
+header {
+    background-color: #b91c1c;
+    color: #ffff;
+    position: fixed;
+    top: 0;
+    padding: 0.5em 0;
+    text-align: center;
+    z-index: 999;
+    width: 100%;
+}
+
+nav {
+    position: absolute;
+    text-align: left;
+    top: 100%;
+    left: 0;
+    background-color: #b91c1c;
+    width: 100%;
+    padding: 1em;
+    display: none;
+    transition: display 2s;
+    transition-timing-function: ease-in-out;
+}
+
+nav ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+nav li {
+    margin-bottom: 1em;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    font-size: 1.2em;
+    text-transform: uppercase;
+}
+
+nav li a:hover {
+    color: #111;
+    font-weight: 900;
+    background-color: rgba(185, 28, 28, 0.3);
+    font-size: 1.5em;
+}
+
+.nav-toggle {
+    display: none;
+}
+
+.nav-toggle-label {
+    position: absolute;
+    top: 0;
+    left: 1em;
+    height: 100%;
+    display: flex;
+    align-items: center;
+}
+
+.nav-toggle-label span,
+.nav-toggle-label span::before,
+.nav-toggle-label span::after {
+    display: block;
+    background: white;
+    height: 0.2em;
+    width: 3em;
+    border-radius: 2px;
+    position: relative;
+}
+
+.nav-toggle-label span::before,
+.nav-toggle-label span::after {
+    content: '';
+    position: absolute;
+}
+
+.nav-toggle-label span::before {
+    bottom: 1em;
+}
+
+.nav-toggle-label span::after {
+    top: 1em;
+}
+
+.nav-toggle:checked~nav {
+    display: block;
+    animation: fadeIn 0.5s;
+}
+
+.nav-toggle:checked~.nav-toggle-label span,
+.nav-toggle:checked~.nav-toggle-label span::after,
+.nav-toggle:checked~.nav-toggle-label span::before {
+    background-color: #111;
+    height: 0.4em;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+@media screen and (min-width: 800px) {
+    .nav-toggle-label {
+        display: none;
+    }
+
+    .logo {
+        letter-spacing: 0.25em;
+    }
+
+    header {
+        display: grid;
+        gap: 1em;
+        grid-template-columns: 1fr 4fr;
+        width: 100vw;
+    }
+
+    nav {
+        display: block;
+        position: relative;
+        top: 0;
+    }
+
+    nav ul {
+        display: flex;
+        align-items: center;
+        justify-content: right;
+    }
+
+    nav li {
+        margin-right: 2em;
+    }
+}
